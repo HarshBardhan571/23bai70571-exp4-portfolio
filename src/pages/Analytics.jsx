@@ -1,11 +1,16 @@
 import { useContext, useMemo } from "react";
+import { useSelector } from "react-redux";
 import { AppContext } from "../context/AppContext";
 
 function Analytics() {
+
   const context = useContext(AppContext);
   if (!context) return null;
 
-  const { skills, totalSkills, strongSkills, averageSkill } = context;
+  const { totalSkills, strongSkills, averageSkill } = context;
+
+  // Redux state
+  const skills = useSelector((state) => state.skills.skills);
 
   // Find top skill
   const topSkill = useMemo(() => {

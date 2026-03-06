@@ -108,6 +108,19 @@ const Navbar = () => {
             Analytics
           </NavLink>
 
+          {/* NEW PAGE FOR EXPERIMENT 5 */}
+          <NavLink
+            to="/reports"
+            style={({ isActive }) => ({
+              ...navStyle,
+              color: darkMode ? "white" : "black",
+              ...(isActive ? activeStyle : {}),
+            })}
+          >
+            Reports
+          </NavLink>
+
+          {/* Theme Toggle */}
           <button
             onClick={toggleTheme}
             style={{
